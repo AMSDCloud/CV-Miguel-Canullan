@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0e14">
+<title>Miguel Canullan | Técnico Electromecánico</title>
+<meta name="description" content="Miguel Canullan, técnico electromecánico en Bahía Blanca. Tableros industriales, mantenimiento eléctrico y mecánico, soldadura, PLC Siemens y AutoCAD.">
+<meta property="og:title" content="Miguel Canullan | Técnico Electromecánico">
+<meta property="og:description" content="Del plano al montaje y al mantenimiento: electricidad, mecánica y soldadura.">
+<meta property="og:image" content="img/perfil.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e14; --bg2:#0e141d; --card:#121a27; --text:#eef2f7; --muted:#8d9bb0; --line:rgba(120,170,255,.15);
+    --amber:#ffb300; --on-amber:#1a1200; --blue:#4da3ff; --chip:rgba(255,255,255,.06);
+    --shadow:0 24px 60px rgba(0,0,0,.5);
+    --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif; --body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+    --r:18px;
+  }
+  :root[data-theme="light"]{
+    --bg:#eef1f5; --bg2:#e4e9f0; --card:#ffffff; --text:#0b1624; --muted:#546377; --line:rgba(11,40,80,.14);
+    --blue:#0a5bd3; --chip:rgba(11,22,36,.06); --shadow:0 24px 50px rgba(11,22,36,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:90px}
+  body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .35s,color .35s;overflow-x:hidden}
+  a{color:inherit}
+  img{max-width:100%}
+  ::selection{background:var(--amber);color:var(--on-amber)}
+  .wrap{width:min(1180px,92%);margin-inline:auto}
+  .mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--amber);z-index:200}
+
+  /* NAV */
+  nav{position:fixed;top:14px;left:0;right:0;z-index:100;pointer-events:none}
+  .nav-in{pointer-events:auto;width:min(860px,92%);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 10px 8px 20px;border-radius:999px;background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border:1px solid var(--line)}
+  .logo{font-family:var(--display);font-weight:800;font-size:1.25rem;text-decoration:none;letter-spacing:.04em;text-transform:uppercase}
+  .logo b{color:var(--amber)}
+  .links{display:flex;gap:2px}
+  .links a{text-decoration:none;font-size:.9rem;color:var(--muted);padding:8px 13px;border-radius:999px;transition:.2s}
+  .links a:hover{color:var(--text);background:var(--chip)}
+  .nav-r{display:flex;gap:8px;align-items:center}
+  .icon-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--chip);color:var(--text);cursor:pointer;display:grid;place-items:center;font-size:1rem;transition:.2s}
+  .icon-btn:hover{background:var(--amber);color:var(--on-amber);border-color:var(--amber)}
+  .nav-cta{background:var(--amber);color:var(--on-amber);font-weight:600;font-size:.88rem;text-decoration:none;padding:10px 18px;border-radius:999px;transition:transform .2s}
+  .nav-cta:hover{transform:scale(1.05)}
+
+  /* HERO */
+  .hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden}
+  .bp{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 40% 45%,#000 0%,transparent 72%);-webkit-mask-image:radial-gradient(ellipse at 40% 45%,#000 0%,transparent 72%);pointer-events:none}
+  .glow{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.22;background:var(--amber);right:-140px;top:-100px;pointer-events:none}
+  :root[data-theme="light"] .glow{opacity:.4}
+  .circuit{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.55}
+  .circuit path{fill:none;stroke:var(--amber);stroke-width:1.5;stroke-dasharray:6 14;animation:flow 3.5s linear infinite;opacity:.55}
+  .circuit circle{fill:var(--amber)}
+  @keyframes flow{to{stroke-dashoffset:-20}}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center;position:relative;z-index:2}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px}
+  .eyebrow i{width:34px;height:2px;background:var(--amber);display:block}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(3.6rem,10.5vw,8.6rem);line-height:.86;letter-spacing:-.01em;text-transform:uppercase}
+  h1 span{display:block}
+  h1 .out{color:transparent;-webkit-text-stroke:2px var(--text)}
+  .role{font-family:var(--mono);font-size:clamp(.95rem,1.8vw,1.15rem);margin:28px 0 14px;min-height:1.9em;color:var(--amber)}
+  :root[data-theme="light"] .role{color:var(--blue)}
+  .role::before{content:"> ";opacity:.7}
+  .caret{display:inline-block;width:9px;height:1.1em;background:currentColor;margin-left:3px;vertical-align:-.2em;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .lead{color:var(--muted);max-width:54ch;font-size:1.12rem}
+  .lead b{color:var(--text);font-weight:600}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:12px;font-weight:600;font-size:.98rem;text-decoration:none;border:1px solid var(--line);background:var(--chip);color:var(--text);cursor:pointer;font-family:inherit;transition:transform .25s,background .25s,color .25s,border-color .25s}
+  .btn:hover{transform:translateY(-3px)}
+  .btn.amber{background:var(--amber);color:var(--on-amber);border-color:var(--amber)}
+  .btn.ghost:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
+  .btn svg{width:18px;height:18px}
+  .hero-stats{display:flex;gap:34px;margin-top:44px;flex-wrap:wrap}
+  .hero-stats div{border-left:2px solid var(--amber);padding-left:14px}
+  .hero-stats b{font-family:var(--display);font-size:2.6rem;line-height:1;display:block;font-weight:700}
+  .hero-stats span{color:var(--muted);font-size:.86rem}
+
+  .hero-visual{position:relative;justify-self:center;width:min(410px,100%)}
+  .frame{position:relative;padding:14px}
+  .frame::before,.frame::after,.frame i::before,.frame i::after{content:"";position:absolute;width:28px;height:28px;border:2px solid var(--amber)}
+  .frame::before{top:0;left:0;border-right:0;border-bottom:0}
+  .frame::after{top:0;right:0;border-left:0;border-bottom:0}
+  .frame i::before{bottom:0;left:0;border-right:0;border-top:0}
+  .frame i::after{bottom:0;right:0;border-left:0;border-top:0}
+  .photo{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:6px;background:var(--card);box-shadow:var(--shadow)}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;transition:transform .8s}
+  .photo:hover img{transform:scale(1.04)}
+  .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.5));pointer-events:none}
+  .chipf{position:absolute;z-index:3;left:14px;bottom:14px;padding:8px 14px;border-radius:8px;background:rgba(10,14,20,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.18)}
+  .dim{display:flex;align-items:center;gap:10px;margin-top:14px;color:var(--muted)}
+  .dim::before,.dim::after{content:"";flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--muted) 0 6px,transparent 6px 10px);opacity:.7}
+  .tagfloat{position:absolute;z-index:4;top:-10px;right:-14px;background:var(--amber);color:var(--on-amber);font-family:var(--display);font-weight:800;font-size:1.1rem;letter-spacing:.03em;padding:6px 14px;border-radius:8px;text-transform:uppercase;transform:rotate(4deg);box-shadow:var(--shadow)}
+
+  /* MARQUEE */
+  .marquee{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:16px 0}
+  .track{display:flex;gap:40px;width:max-content;animation:slide 38s linear infinite}
+  .marquee:hover .track{animation-play-state:paused}
+  .track span{font-family:var(--display);font-weight:700;font-size:clamp(1.2rem,2.6vw,1.8rem);letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:40px}
+  .track span::after{content:"⚡︎";color:var(--amber);font-size:1rem}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* SECCIONES */
+  section{padding:96px 0}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:42px;flex-wrap:wrap}
+  h2{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,5.4vw,3.8rem);line-height:.98;text-transform:uppercase;letter-spacing:.005em}
+  h2 em{font-style:normal;color:var(--amber)}
+  :root[data-theme="light"] h2 em{background:var(--amber);color:var(--on-amber);padding:0 .14em;border-radius:6px}
+  .sec-head p{color:var(--muted);max-width:44ch}
+
+  /* FLUJO plano -> montaje -> mantenimiento */
+  .flow{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px}
+  .steps{display:grid;gap:10px;align-content:start}
+  .step{position:relative;display:flex;align-items:center;gap:16px;text-align:left;width:100%;padding:18px 20px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer;font-family:inherit;transition:.25s;overflow:hidden}
+  .step:hover{border-color:color-mix(in srgb,var(--amber) 55%,var(--line))}
+  .step .n{font-family:var(--mono);font-size:.78rem;color:var(--muted);transition:.25s}
+  .step b{font-family:var(--display);font-size:1.45rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:1.1;display:block}
+  .step small{color:var(--muted);font-size:.86rem}
+  .step svg{width:30px;height:30px;margin-left:auto;stroke:var(--muted);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;transition:.25s}
+  .step.on{background:var(--amber);color:var(--on-amber);border-color:var(--amber)}
+  .step.on small,.step.on .n{color:rgba(26,18,0,.72)}
+  .step.on svg{stroke:var(--on-amber)}
+  .step .bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--on-amber);opacity:.6}
+  .step.on .bar{animation:fill var(--t,7s) linear forwards}
+  .paused .step.on .bar{animation-play-state:paused}
+  @keyframes fill{to{width:100%}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,4vw,44px);position:relative;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+  .panel::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:28px 28px;opacity:.5;mask-image:linear-gradient(135deg,transparent 40%,#000);-webkit-mask-image:linear-gradient(135deg,transparent 40%,#000);pointer-events:none}
+  .panel>*{position:relative}
+  .panel .big{font-family:var(--display);font-weight:800;font-size:clamp(4rem,10vw,7rem);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--amber);opacity:.9}
+  .panel h3{font-family:var(--display);font-size:clamp(1.7rem,3.4vw,2.4rem);text-transform:uppercase;line-height:1.05;margin-bottom:12px}
+  .panel p{color:var(--muted);font-size:1.08rem;max-width:52ch}
+  .panel p b{color:var(--text);font-weight:600}
+  .panel .tags{display:flex;gap:8px;flex-wrap:wrap}
+  .panel .fade{animation:swap .5s both}
+  @keyframes swap{from{opacity:0;transform:translateY(14px)}}
+  .tag{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;padding:7px 12px;border:1px solid var(--line);border-radius:8px;background:var(--chip)}
+  .quote{margin-top:22px;padding:22px 26px;border-left:3px solid var(--amber);background:var(--card);border-radius:0 var(--r) var(--r) 0;font-size:1.18rem;color:var(--text)}
+  .quote b{color:var(--amber)}
+  :root[data-theme="light"] .quote b{color:var(--text);background:var(--amber);padding:0 .2em;border-radius:4px}
+
+  /* COMPETENCIAS */
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:transform .3s,border-color .3s;position:relative;overflow:hidden}
+  .card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--amber) 60%,var(--line))}
+  .card .num{font-family:var(--mono);color:var(--amber);font-size:.8rem}
+  :root[data-theme="light"] .card .num{color:var(--blue)}
+  .card h3{font-family:var(--display);font-size:1.8rem;text-transform:uppercase;margin:10px 0 14px;line-height:1}
+  .card ul{list-style:none;display:grid;gap:9px}
+  .card li{display:flex;gap:10px;color:var(--muted);font-size:.97rem;line-height:1.4}
+  .card li::before{content:"▸";color:var(--amber);flex-shrink:0}
+  :root[data-theme="light"] .card li::before{color:var(--text)}
+
+  /* EXPERIENCIA */
+  .tl{position:relative;display:grid;gap:18px;padding-left:34px}
+  .tl::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--amber),var(--line))}
+  .job{position:relative;display:grid;grid-template-columns:200px 1fr;gap:26px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:.3s}
+  .job:hover{border-color:color-mix(in srgb,var(--amber) 60%,var(--line));transform:translateX(4px)}
+  .job::before{content:"";position:absolute;left:-33px;top:34px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--amber)}
+  .job.now::before{background:var(--amber);box-shadow:0 0 0 6px rgba(255,179,0,.2);animation:ping 2.2s infinite}
+  @keyframes ping{50%{box-shadow:0 0 0 10px rgba(255,179,0,0)}}
+  .job .when{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+  .job .dur{font-family:var(--display);font-weight:800;font-size:2.3rem;line-height:1;margin-top:8px;color:var(--amber)}
+  :root[data-theme="light"] .job .dur{color:var(--text)}
+  .job h3{font-family:var(--display);font-size:1.9rem;text-transform:uppercase;line-height:1.05}
+  .job .rol{color:var(--amber);font-weight:600;margin:2px 0 10px;font-family:var(--mono);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}
+  :root[data-theme="light"] .job .rol{color:var(--blue)}
+  .job p{color:var(--muted)}
+  .job .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+  .badge-now{display:inline-block;background:var(--amber);color:var(--on-amber);font-family:var(--mono);font-size:.68rem;font-weight:500;letter-spacing:.1em;padding:3px 9px;border-radius:6px;margin-left:10px;vertical-align:middle;text-transform:uppercase}
+
+  /* FORMACION */
+  .edu-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+  .box h3{margin-bottom:18px}
+  .school{display:grid;gap:22px}
+  .school div{padding-left:18px;border-left:3px solid var(--amber)}
+  .school b{font-family:var(--display);font-size:1.5rem;text-transform:uppercase;line-height:1.1;display:block}
+  .school span{color:var(--muted);font-size:.95rem}
+  .sw{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .sw div{padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--chip);transition:.25s}
+  .sw div:hover{border-color:var(--amber);transform:translateY(-3px)}
+  .sw b{display:block;font-weight:600}
+  .sw span{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .lang{margin-top:22px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+
+  /* CONTACTO */
+  .contact{background:var(--amber);color:var(--on-amber);border-radius:28px;padding:clamp(34px,7vw,84px);position:relative;overflow:hidden}
+  .contact::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,rgba(0,0,0,.07) 0 14px,transparent 14px 28px);pointer-events:none}
+  .contact>*{position:relative}
+  .contact h2{font-size:clamp(3rem,10vw,7.4rem);line-height:.88}
+  .contact p{font-size:1.15rem;margin:18px 0 30px;max-width:46ch;opacity:.82}
+  .contact .btn{background:var(--on-amber);color:var(--amber);border-color:var(--on-amber)}
+  .contact .btn.ghost{background:transparent;color:var(--on-amber)}
+  .contact .btn.ghost:hover{background:var(--on-amber);color:var(--amber)}
+  .data{display:flex;gap:30px;flex-wrap:wrap;margin-top:36px;font-weight:600}
+  .data span{opacity:.75;font-weight:500;display:block;font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em}
+  footer{padding:36px 0 56px;text-align:center;color:var(--muted);font-size:.86rem}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+
+  @media(max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:56px}
+    .hero-visual{order:-1;width:min(340px,86%)}
+    .hero{padding-top:110px}
+    .flow{grid-template-columns:1fr}
+    .cards{grid-template-columns:repeat(2,1fr)}
+    .edu-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:700px){
+    .links{display:none}
+    .nav-in{padding-left:16px}
+    section{padding:70px 0}
+    .cards{grid-template-columns:1fr}
+    .job{grid-template-columns:1fr;gap:14px;padding:22px}
+    .tl{padding-left:28px}
+    .job::before{left:-27px}
+    .sw{grid-template-columns:1fr}
+    .hero-stats{gap:22px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+  @media print{
+    :root[data-theme]{--bg:#fff;--bg2:#fff;--card:#fff;--text:#000;--muted:#444;--line:#ccc;--chip:#f1f1f1;--amber:#e0e0e0;--on-amber:#000;--blue:#000}
+    nav,.progress,.glow,.bp,.circuit,.marquee,.cta,.tagfloat,.steps,.dim,.chipf{display:none!important}
+    .reveal{opacity:1;transform:none}
+    .hero{min-height:0;padding:20px 0}
+    section{padding:22px 0}
+    .photo{max-width:200px;box-shadow:none}
+    .job,.card,.box{break-inside:avoid}
+    .panel{display:none}
+    .contact{border:1px solid #ccc}
+    .contact::before{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="#inicio">M<b>.</b>Canullan</a>
+    <div class="links">
+      <a href="#perfil">Perfil</a>
+      <a href="#competencias">Competencias</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#formacion">Formación</a>
+    </div>
+    <div class="nav-r">
+      <button class="icon-btn" id="themeBtn" title="Cambiar tema" aria-label="Cambiar tema">☀</button>
+      <a class="nav-cta" href="#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="glow"></div><div class="bp"></div>
+  <svg class="circuit" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M0 640 H260 V560 H520 V700 H760 V620 H1200"/>
+    <path d="M0 160 H180 V230 H420 V120 H700 V60 H1200"/>
+    <circle cx="260" cy="640" r="4"/><circle cx="520" cy="560" r="4"/><circle cx="420" cy="230" r="4"/><circle cx="700" cy="120" r="4"/>
+  </svg>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow mono reveal"><i></i><span>Técnico electromecánico · Bahía Blanca</span></p>
+      <h1 class="reveal"><span>Miguel</span><span class="out">Canullan</span></h1>
+      <p class="role reveal"><span id="typed"></span><i class="caret"></i></p>
+      <p class="lead reveal" id="lead"></p>
+      <div class="cta reveal">
+        <a class="btn amber" id="waBtn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4.3 3.6A.5.5 0 0 1 3.9 20V5a1 1 0 0 1 .1-1Z"/></svg>
+          Escribime por WhatsApp
+        </a>
+        <button class="btn ghost" onclick="window.print()">Descargar CV ↓</button>
+      </div>
+      <div class="hero-stats reveal" id="stats"></div>
+    </div>
+    <div class="hero-visual reveal">
+      <span class="tagfloat" id="tagYears"></span>
+      <div class="frame"><i></i>
+        <div class="photo">
+          <img id="avatar" src="img/perfil.jpg" alt="Miguel Canullan" width="1100" height="1467">
+          <span class="chipf">Mantenimiento industrial</span>
+        </div>
+      </div>
+      <div class="dim mono">Téc. electromecánico</div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<main class="wrap">
+
+  <section id="perfil">
+    <div class="sec-head reveal">
+      <h2>Un perfil <em>completo</em></h2>
+      <p>Del plano a la máquina funcionando. Tocá cada etapa.</p>
+    </div>
+    <div class="flow reveal" id="flow">
+      <div class="steps" id="steps" role="tablist" aria-label="Etapas del trabajo"></div>
+      <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+    </div>
+    <div class="quote reveal" id="quote"></div>
+  </section>
+
+  <section id="competencias">
+    <div class="sec-head reveal">
+      <h2>Lo que <em>sé hacer</em></h2>
+      <p>Electricidad, mecánica, soldadura y diseño técnico, en un solo perfil.</p>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="experiencia">
+    <div class="sec-head reveal">
+      <h2>Experiencia <em>laboral</em></h2>
+      <p>Industria, mantenimiento y montaje de tableros en Bahía Blanca.</p>
+    </div>
+    <div class="tl" id="tl"></div>
+  </section>
+
+  <section id="formacion">
+    <div class="sec-head reveal">
+      <h2>Formación y <em>cursos</em></h2>
+      <p>Base técnica de escuela industrial, sumada a cursos de automatización y diseño.</p>
+    </div>
+    <div class="edu-grid">
+      <div class="box reveal"><p class="mono" style="margin-bottom:18px">Estudios</p><div class="school" id="school"></div>
+        <div class="lang"><span class="mono">Idioma</span><span class="tag" id="idioma"></span></div></div>
+      <div class="box reveal"><p class="mono" style="margin-bottom:18px">Cursos e informática</p><div class="sw" id="sw"></div></div>
+    </div>
+  </section>
+
+  <section id="contacto" style="padding-top:30px">
+    <div class="contact reveal">
+      <h2>Hablemos</h2>
+      <p>Escribime por WhatsApp o por email y coordinamos.</p>
+      <div class="cta">
+        <a class="btn" id="waBtn2" target="_blank" rel="noopener">WhatsApp ↗</a>
+        <a class="btn ghost" id="mailBtn">Enviar email ↗</a>
+      </div>
+      <div class="data">
+        <div><span>Teléfono</span><b id="telTxt"></b></div>
+        <div><span>Email</span><b id="mailTxt"></b></div>
+        <div><span>Ubicación</span><b id="cityTxt"></b></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> Miguel Canullan · Bahía Blanca, Buenos Aires</footer>
+
+<script>
+/* =========================================================
+   DATOS DEL CV  (editá solo esta sección)
+   ========================================================= */
+const CV = {
+  nombre: "Miguel Canullan",
+  ciudad: "Bahía Blanca, Buenos Aires",
+  tel: "2914076255",
+  telWhatsApp: "5492914076255",          // formato internacional para wa.me
+  email: "canullan1984@gmail.com",
+  inicioCocaCola: { y: 2011, m: 5 },     // mayo 2011 (para calcular los años solo)
+  desdeAnio: 2010,
+  roles: ["Tableros industriales", "Mantenimiento eléctrico y mecánico", "Soldadura", "PLC Siemens y AutoCAD"],
+  lead: "Leo el plano, armo el tablero y mantengo la máquina funcionando. <b>Electricidad, mecánica y soldadura</b> en un solo perfil.",
+  frase: "Para armar un tablero eléctrico industrial hay que <b>saber leer planos, manejar las herramientas y visualizar el montaje</b>. Y en mantenimiento, además, <b>soldar</b>. Lo mecánico, más los cursos, completan el perfil.",
+  etapas: [
+    { t:"Leer el plano", s:"Esquemas eléctricos y diseño", ico:"M6 3h9l4 4v14H6z M9 12h7 M9 16h7 M9 8h3",
+      h:"Todo empieza en el plano",
+      p:"Interpretar <b>planos y esquemas eléctricos</b> es la base de cualquier tablero. Formación como técnico electromecánico con orientación en electricidad y manejo de <b>AutoCAD</b>.",
+      tags:["Técnico electromecánico","AutoCAD","Lectura de planos"] },
+    { t:"Armar y montar", s:"Tableros industriales", ico:"M4 4h16v16H4z M8 8h3v3H8z M13 8h3v3h-3z M8 15h8",
+      h:"Del plano al tablero armado",
+      p:"<b>Armado y montaje de tableros industriales</b> en Sincosur: saber qué herramientas usar y visualizar el montaje completo antes de empezar.",
+      tags:["Tableros industriales","Montaje","Sincosur"] },
+    { t:"Mantener", s:"Eléctrico y mecánico", ico:"GEAR",
+      h:"Mantener la línea en marcha",
+      p:"<b>Mantenimiento eléctrico y mecánico</b> de máquinas en línea en Coca-Cola Andina, con formación en <b>PLC Siemens</b>.",
+      tags:["Mantenimiento eléctrico","Mantenimiento mecánico","PLC Siemens"] },
+    { t:"Reparar y soldar", s:"Trabajos de soldadura", ico:"M13 2 4 14h6l-1 8 9-12h-6z",
+      h:"Cuando hay que reparar, se suelda",
+      p:"<b>Reparación de máquinas en línea y trabajos de soldadura</b>: el complemento mecánico que completa el trabajo de mantenimiento.",
+      tags:["Soldadura","Reparación de máquinas","Mecánica"] }
+  ],
+  competencias: [
+    { t:"Electricidad", items:["Mantenimiento eléctrico","Armado de tableros industriales","Operario eléctrico en termoeléctrica","PLC Siemens"] },
+    { t:"Mecánica", items:["Mantenimiento mecánico","Reparación de máquinas en línea"] },
+    { t:"Soldadura", items:["Trabajos de soldadura en mantenimiento","Reparación de equipos en línea"] },
+    { t:"Planos y diseño", items:["Lectura de planos","AutoCAD","CorelDRAW · Photoshop · Illustrator"] }
+  ],
+  experiencia: [
+    { emp:"Coca-Cola Andina", rol:"Mantenimiento", per:"May 2011 – Actualidad", actual:true,
+      desc:"Reparación de máquinas en línea, mantenimiento eléctrico, mecánico y trabajos de soldadura.", tags:["Eléctrico","Mecánico","Soldadura"] },
+    { emp:"Sincosur", rol:"Técnico", per:"2010 – May 2011", dur:"1 año",
+      desc:"Armado y montaje de tableros industriales.", tags:["Tableros","Montaje"] },
+    { emp:"UTE Bahía Blanca", rol:"Electricista", per:"2010", dur:"2010",
+      desc:"Operario eléctrico en Termoeléctrica Bahía Blanca.", tags:["Eléctrico","Termoeléctrica"] }
+  ],
+  estudios: [
+    { t:"Técnico electromecánico con orientación en electricidad", d:"Escuela Técnica N°2 · Secundaria completa · Bahía Blanca" },
+    { t:"Primaria completa", d:"Escuela N°47 · Bahía Blanca" }
+  ],
+  software: [
+    { n:"PLC Siemens", c:"Automatización" }, { n:"AutoCAD", c:"Planos y diseño técnico" },
+    { n:"Office", c:"Ofimática" }, { n:"CorelDRAW", c:"Diseño gráfico" },
+    { n:"Photoshop", c:"Diseño gráfico" }, { n:"Illustrator", c:"Diseño gráfico" }
+  ],
+  idioma: "Inglés técnico básico"
+};
+
+/* =========================================================
+   UTILIDADES
+   ========================================================= */
+const $ = id => document.getElementById(id);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch{ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch{} }
+};
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Años en Coca-Cola Andina, calculados con la fecha de hoy */
+function yearsSince(y, m){
+  const n = new Date();
+  let a = n.getFullYear() - y;
+  if (n.getMonth() + 1 < m) a--;
+  return Math.max(a, 0);
+}
+const aniosCoca = yearsSince(CV.inicioCocaCola.y, CV.inicioCocaCola.m);
+const aniosTotal = new Date().getFullYear() - CV.desdeAnio;
+
+/* =========================================================
+   RENDER
+   ========================================================= */
+function renderBasics(){
+  $("lead").innerHTML = CV.lead;
+  $("quote").innerHTML = CV.frase;
+  $("year").textContent = new Date().getFullYear();
+  $("telTxt").textContent = CV.tel;
+  $("mailTxt").textContent = CV.email;
+  $("cityTxt").textContent = CV.ciudad;
+  $("idioma").textContent = CV.idioma;
+  $("tagYears").textContent = `+${aniosCoca} años en planta`;
+
+  const wa = `https://wa.me/${CV.telWhatsApp}?text=${encodeURIComponent("Hola Miguel, vi tu CV y quisiera contactarte.")}`;
+  $("waBtn").href = $("waBtn2").href = wa;
+  $("mailBtn").href = `mailto:${CV.email}?subject=${encodeURIComponent("Contacto desde tu CV web")}`;
+
+  [[aniosTotal,"años en el rubro", "+"],[CV.experiencia.length,"empresas",""],[4,"especialidades",""]].forEach(([n,l,s]) => {
+    const d = el("div"); const b = el("b","","0"); b.dataset.to = n; b.dataset.suf = s; d.append(b, el("span","",l)); $("stats").append(d);
+  });
+
+  const words = ["Electricidad","Mecánica","Soldadura","Tableros industriales","Lectura de planos","PLC Siemens","AutoCAD","Mantenimiento"];
+  for (let k = 0; k < 2; k++) words.forEach(w => $("track").append(el("span","",w)));
+
+  CV.competencias.forEach((c,i) => {
+    const d = el("article","card reveal"); d.style.transitionDelay = (i*70)+"ms";
+    d.append(el("span","num","0"+(i+1)), el("h3","",c.t));
+    const ul = el("ul"); c.items.forEach(x => ul.append(el("li","",x))); d.append(ul);
+    $("cards").append(d);
+  });
+
+  CV.experiencia.forEach((x,i) => {
+    const j = el("article","job reveal"+(x.actual?" now":""));
+    const l = el("div"); l.append(el("div","when",x.per), el("div","dur", x.actual ? `${aniosCoca} años` : x.dur));
+    const r = el("div"); const h = el("h3","",x.emp);
+    if (x.actual) h.append(el("span","badge-now","Actual"));
+    r.append(h, el("p","rol",x.rol + " · Bahía Blanca"), el("p","",x.desc));
+    const tg = el("div","tags"); x.tags.forEach(t => tg.append(el("span","tag",t))); r.append(tg);
+    j.append(l, r); $("tl").append(j);
+  });
+
+  CV.estudios.forEach(e => { const d = el("div"); d.append(el("b","",e.t), el("span","",e.d)); $("school").append(d); });
+  CV.software.forEach(s => { const d = el("div"); d.append(el("b","",s.n), el("span","",s.c)); $("sw").append(d); });
+}
+
+/* Flujo interactivo: plano -> montaje -> mantenimiento -> soldadura */
+const GEAR = '<circle cx="12" cy="12" r="7" stroke-width="4" stroke-dasharray="2.75 2.75" fill="none"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.3"/>';
+let cur = 0, timer = null, hold = false;
+const DUR = 7000;
+function buildSteps(){
+  const box = $("steps");
+  CV.etapas.forEach((e,i) => {
+    const b = el("button","step"); b.type = "button"; b.setAttribute("role","tab"); b.id = "tab"+i;
+    const n = el("span","n","0"+(i+1));
+    const t = el("div"); const bb = el("b","",e.t); const s = el("small","",e.s); t.append(bb, s);
+    const svg = document.createElementNS("http://www.w3.org/2000/svg","svg"); svg.setAttribute("viewBox","0 0 24 24");
+    svg.innerHTML = e.ico === "GEAR" ? GEAR : `<path d="${e.ico}"/>`;
+    const bar = el("i","bar");
+    b.append(n, t, svg, bar);
+    b.onclick = () => { go(i, true); };
+    b.addEventListener("keydown", ev => {
+      if (ev.key === "ArrowDown" || ev.key === "ArrowRight") { ev.preventDefault(); go((cur+1) % CV.etapas.length, true); $("tab"+cur).focus(); }
+      if (ev.key === "ArrowUp" || ev.key === "ArrowLeft") { ev.preventDefault(); go((cur-1+CV.etapas.length) % CV.etapas.length, true); $("tab"+cur).focus(); }
+    });
+    box.append(b);
+  });
+}
+function go(i, user){
+  cur = i;
+  document.querySelectorAll(".step").forEach((b,k) => {
+    b.classList.remove("on"); b.setAttribute("aria-selected", k === i); b.tabIndex = k === i ? 0 : -1;
+    if (k === i){ void b.offsetWidth; b.style.setProperty("--t", (DUR/1000)+"s"); b.classList.add("on"); }
+  });
+  const e = CV.etapas[i], p = $("panel"); p.setAttribute("aria-labelledby","tab"+i);
+  p.innerHTML = "";
+  const top = el("div","fade"); top.append(el("div","big","0"+(i+1)));
+  const mid = el("div","fade"); const h = el("h3","",e.h); const pp = el("p"); pp.innerHTML = e.p; mid.append(h, pp);
+  const tg = el("div","tags fade"); e.tags.forEach(t => tg.append(el("span","tag",t)));
+  p.append(top, mid, tg);
+  clearTimeout(timer);
+  if (!user && reduce) return;
+  if (!reduce) timer = setTimeout(() => { if (!hold) go((cur+1) % CV.etapas.length); else schedule(); }, DUR);
+}
+function schedule(){ clearTimeout(timer); timer = setTimeout(() => { if (!hold) go((cur+1) % CV.etapas.length); else schedule(); }, 1000); }
+const flow = $("flow");
+flow.addEventListener("mouseenter", () => { hold = true; flow.classList.add("paused"); });
+flow.addEventListener("mouseleave", () => { hold = false; flow.classList.remove("paused"); });
+flow.addEventListener("focusin", () => { hold = true; flow.classList.add("paused"); });
+flow.addEventListener("focusout", () => { hold = false; flow.classList.remove("paused"); });
+
+/* Tema */
+function applyTheme(t){
+  document.documentElement.dataset.theme = t;
+  $("themeBtn").textContent = t === "dark" ? "☀" : "☾";
+  document.querySelector('meta[name="theme-color"]').content = t === "dark" ? "#0a0e14" : "#eef1f5";
+}
+applyTheme(store.get("mc_tema", "dark"));
+$("themeBtn").onclick = () => { const t = document.documentElement.dataset.theme === "dark" ? "light" : "dark"; applyTheme(t); store.set("mc_tema", t); };
+
+/* Texto que se escribe solo */
+(function typer(){
+  const out = $("typed"); let r = 0, c = 0, del = false;
+  if (reduce){ out.textContent = CV.roles.join(" · "); return; }
+  function tick(){
+    const w = CV.roles[r];
+    out.textContent = w.slice(0, c);
+    if (!del && c === w.length){ del = true; return setTimeout(tick, 1700); }
+    if (del && c === 0){ del = false; r = (r + 1) % CV.roles.length; }
+    c += del ? -1 : 1;
+    setTimeout(tick, del ? 24 : 55);
+  }
+  tick();
+})();
+
+/* Aparición al hacer scroll + contadores */
+function countUp(node){
+  const to = +node.dataset.to, suf = node.dataset.suf || "";
+  if (reduce){ node.textContent = to + suf; return; }
+  const t0 = performance.now(), dur = 1300;
+  (function f(t){ const p = Math.min(1,(t-t0)/dur); node.textContent = Math.round(to * (1 - Math.pow(1-p,3))) + (p === 1 ? suf : ""); if (p<1) requestAnimationFrame(f); })(t0);
+}
+function observeReveal(){
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add("show");
+    e.target.querySelectorAll("[data-to]").forEach(countUp);
+    io.unobserve(e.target);
+  }), { threshold:.12 });
+  document.querySelectorAll(".reveal").forEach(n => io.observe(n));
+}
+
+addEventListener("scroll", () => {
+  const h = document.documentElement;
+  $("progress").style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100 || 0) + "%";
+}, {passive:true});
+
+$("avatar").onerror = function(){ this.onerror = null; this.src = "data:image/svg+xml;utf8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000"><rect width="800" height="1000" fill="#121a27"/><text x="50%" y="52%" font-family="Arial" font-size="240" font-weight="700" fill="#ffb300" text-anchor="middle" dominant-baseline="middle">MC</text></svg>'); };
+
+/* INIT */
+renderBasics(); buildSteps(); go(0); observeReveal();
+</script>
+</body>
+</html>
